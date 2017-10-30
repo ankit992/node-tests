@@ -11,6 +11,20 @@ it('should square a number', () => {
     expect(res).toBe(25).toBeA('number');
 });
 
+it('should async add two numbers', (done) => {
+    utils.asyncAdd(4, 5, (sum) => {
+        expect(sum).toBe(9).toBeA('number');
+        done();
+    });
+});
+
+it('should async square a numbet', (done) => {
+    utils.asyncSquare(5, (square) => {
+        expect(square).toBe(25).toBeA('number');
+        done();
+    });
+});
+
 it('should verify first and last names are set', () => {
     var user = {location: 'India', age: 25};
     var res = utils.setName(user, 'Ankit Arora' );
